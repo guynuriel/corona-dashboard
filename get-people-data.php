@@ -2,9 +2,10 @@
 
 
 include_once 'DB.php';
-$daily = get_all_daily();
-$people = get_all_people();
-$dates = get_all_dates();
+
+$daily = $DB->get_all_daily();
+$people = $DB->get_all_people();
+$dates = $DB->get_all_dates();
 $allData = [
     'people' => $people,
     'dates' => $dates,

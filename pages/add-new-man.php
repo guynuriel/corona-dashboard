@@ -6,7 +6,7 @@ include '../DB.php';
 $id = isset($_POST['id']) ? $_POST['id'] : null;;
 if ($id) {
 
-  if (!is_id_exist($id)) {
+  if (!$DB->is_id_exist($id)) {
     $new_man =
       [
         'man_id' => $_POST['id'],
@@ -17,7 +17,7 @@ if ($id) {
 
       ];
 
-    insert_new_man($new_man);
+      $DB->insert_new_man($new_man);
   }
   else{
     echo "this id is all ready exist </br> for update press >> <a href='http://localhost/corona-project/pages/update-man.php'> here </a>";

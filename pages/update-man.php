@@ -8,7 +8,7 @@ $update_id = isset($_POST['update_id']) ? $_POST['update_id'] : null;;
 
 if ($update_id) {
 
-    if (is_id_exist($update_id)) {
+    if ($DB->is_id_exist($update_id)) {
         switch($_POST['form']){
             case '1':
                 $update_man =
@@ -18,7 +18,7 @@ if ($update_id) {
                     'gender' => $_POST['gender'],
                     'team' => $_POST['team'],
                 ];
-                update_man($update_id,  $update_man);
+                $DB->update_man($update_id,  $update_man);
                 break;
 
             case '2':
@@ -46,8 +46,8 @@ if ($update_id) {
                     'is_new_sick' => $new_sick,
                     'is_new_recover' => $new_recover,
                 ];
-                insert_new_date($dates);
-                update_man($update_id,  $update_man);
+                $DB->insert_new_date($dates);
+                $DB->update_man($update_id,  $update_man);
                 break;
 
             case '3': 
@@ -65,8 +65,8 @@ if ($update_id) {
                     'is_new_recover' => 'n',
                     
                 ];
-                insert_new_date($dates);
-                update_man($update_id,  $update_man);
+                $DB->insert_new_date($dates);
+                $DB->update_man($update_id,  $update_man);
                 break;
             default:
                 break;
@@ -134,7 +134,7 @@ if ($update_id) {
         if(isset($_POST['id'] ) || isset($_POST['update_id']) ){
 
             isset($_POST['id']) ? $id = $_POST['id'] : $id = $_POST['update_id'];
-            $man = get_man($id);
+            $man = $DB->get_man($id);
             if($man){
 
     ?>

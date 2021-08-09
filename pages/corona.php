@@ -1,6 +1,6 @@
 <?php
     include '../DB.php';
-    $data = get_all_people();
+    $data = $DB->get_all_people();
 ?>
 <!doctype html>
 <html lang="en">

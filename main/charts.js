@@ -931,6 +931,7 @@ start().then(function (data) {
   chart7(people);
   chart8();
 
+  
   row1box1(people);
   row1box2(people);
   row1box3(dates);
